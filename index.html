@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0a08;
+    color:#f5ead7;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* GOLD GLOW */
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:rgba(196,155,74,.10);
+    filter:blur(120px);
+    border-radius:50%;
+    top:-150px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.small{
+    letter-spacing:6px;
+    font-size:11px;
+    color:#c9a85d;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,15vw,130px);
+    font-weight:500;
+    line-height:.85;
+    color:#f8edda;
+}
+
+.subtitle{
+    margin-top:25px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    color:#d9c49a;
+}
+
+.scroll{
+    position:absolute;
+    bottom:30px;
+    font-size:10px;
+    letter-spacing:4px;
+    color:#8f816c;
+}
+
+/* CONTENT */
+section{
+    max-width:950px;
+    margin:auto;
+    padding:100px 25px;
+    text-align:center;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:500;
+    margin-bottom:40px;
+}
+
+/* PHOTO */
+.photo-frame{
+    width:min(330px,85vw);
+    height:420px;
+    margin:0 auto 45px;
+    padding:10px;
+    border:1px solid #b9964b;
+    position:relative;
+}
+
+.photo-frame::before{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1px solid rgba(185,150,75,.4);
+    pointer-events:none;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* MESSAGE */
+.message{
+    max-width:700px;
+    margin:auto;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    line-height:1.7;
+    color:#ddd0b8;
+}
+
+.signature{
+    margin-top:35px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    color:#c9a85d;
+}
+
+/* MEMORY CARDS */
+.memories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:35px 20px;
+    border:1px solid rgba(185,150,75,.35);
+    background:rgba(255,255,255,.025);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#c9a85d;
+}
+
+.card span{
+    font-size:28px;
+    display:block;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:12px;
+    line-height:1.7;
+    color:#9e9586;
+}
+
+/* BUTTON */
+.music{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid #c9a85d;
+    background:#11100d;
+    color:#d7b866;
+    cursor:pointer;
+    z-index:10;
+    font-size:20px;
+}
+
+/* FOOTER */
+footer{
+    padding:70px 20px;
+    text-align:center;
+    border-top:1px solid rgba(185,150,75,.2);
+}
+
+footer p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    color:#b9aa91;
+}
+
+.gold{
+    color:#c9a85d;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .memories{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .section-title{
+        font-size:40px;
+    }
+
+    .message{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()">♪</button>
+
+
+<!-- HERO -->
+<div class="hero">
+
+    <div>
+        <div class="small">A little something for you</div>
+
+        <h1>Happy<br>Birthday</h1>
+
+        <div class="subtitle">
+            To someone truly special
+        </div>
+    </div>
+
+    <div class="scroll">
+        SCROLL TO DISCOVER
+    </div>
+
+</div>
+
+
+<!-- PHOTO -->
+<section>
+
+    <div class="small">The Beautiful One</div>
+
+    <h2 class="section-title">
+        Today is all about you.
+    </h2>
+
+    <div class="photo-frame">
+        <img src="birthday.jpg" alt="Birthday Photo">
+    </div>
+
+    <div class="message">
+
+        Some people come into our lives and quietly make
+        everything a little more beautiful.
+
+        <br><br>
+
+        Today isn't just another day.
+        It's the day the world received someone
+        incredibly special.
+
+        <br><br>
+
+        May your smile stay bright,
+        your heart stay peaceful,
+        and every dream you've ever wished for
+        find its way to you.
+
+        <div class="signature">
+            With lots of love ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+<section>
+
+    <div class="small">A Few Things</div>
+
+    <h2 class="section-title">
+        You deserve the best.
+    </h2>
+
+    <div class="memories">
+
+        <div class="card">
+            <span>✦</span>
+            <h3>Happiness</h3>
+            <p>
+                May every new day bring you
+                another reason to smile.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>♡</span>
+            <h3>Love</h3>
+            <p>
+                May you always be surrounded
+                by people who truly care.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>∞</span>
+            <h3>Dreams</h3>
+            <p>
+                May every dream in your heart
+                slowly become your reality.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+<section>
+
+    <div class="small">One Last Thing</div>
+
+    <h2 class="section-title">
+        Keep shining.
+    </h2>
+
+    <div class="message">
+
+        Never forget how precious you are.
+
+        <br><br>
+
+        Here's to another year of beautiful
+        memories, unexpected happiness,
+        endless laughter and dreams coming true.
+
+        <br><br>
+
+        <strong class="gold">
+            Happy Birthday. ❤️
+        </strong>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        Made with <span class="gold">♥</span> for someone special
+    </p>
+
+</footer>
+
+
+<script>
+
+let playing = false;
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+    if(!playing){
+        music.play();
+        playing = true;
+        document.querySelector(".music").innerHTML = "Ⅱ";
+    }
+
+    else{
+        music.pause();
+        playing = false;
+        document.querySelector(".music").innerHTML = "♪";
+    }
+
+}
+
+</script>
+
+</body>
+  </html>
